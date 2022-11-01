@@ -1,0 +1,153 @@
+@import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro:regular,bold,italic&subset=latin,latin-ext');
+*{
+  padding: none;
+  margin: none;
+  border: none;
+  color:var(--font-color) ;
+}
+a{
+  text-decoration: none;
+}
+:root{
+  --border-color:#4D5B9E;
+  --btn-bg:#4D5B9E;
+  --font-color:#293264;
+  --border-btm:#DBDEF0;
+  
+  --marked-bg:#D6DBF5;
+  --correct-bg:#94D7A2;
+  --incorrect-bg:#F8BCBC;
+  --y:0px;
+  --y:0px;
+  --shineColor:rgba(225,225,225,0);
+  --size:0px;
+}
+P{
+  font-family: 'Inter', sans-serif;
+  font-family: 'Roboto Mono', monospace;
+  font-family: 'Work Sans', sans-serif;
+}
+/*  */
+.algo-btn{
+  overflow: hidden;
+  font-family: monospace;
+  cursor: pointer;
+  color: white;
+  border-radius: 4px;
+  height: 42px;
+  padding: 0 24px;
+  transition: box-shadow 0.15 ease, transform 0.15 ease;
+  background: radial-gradient(
+    100% 100% at 100% 0%,
+    #5adaff 0%,
+    #5468ff 100%
+  );
+  
+  box-shadow: 0px 2px 4px rgb(45 35 66 / 40%),
+  0px 7px 13px -3px rgb(45 35 66 / 30%),
+  inset 0px -3px 0px rgb(58 65 111 / 50%);
+  text-shadow: 0 1px 0 rgb(0 0 0 / 40%);
+}
+.algo-btn:hover{
+  box-shadow: 0px 4px 8px rgb(45 35 66 / 40%),
+  0px 7px 13px -3px rgb(45 35 66 / 30%), inset 0px -3px 0px #3c4fe0;
+  transform: translateY(-2px);
+}
+.algo-btn:active{
+  box-shadow:  inset 0px 3px 7px #3c4fe0;
+  transform: translateY(2px);
+}
+.algo-btn::before{
+    content: "";
+    position: absolute;
+    z-index: 1;
+    left:calc(var(--x) - var(--size) / 2);
+    top:calc(var(--y) - var(--size) / 2);
+    width:var(--size);
+    height:var(--size);
+    transition: width 0.35s ease,height 0.35s;
+    background: radial-gradient(
+      circle closest-side,
+      var(--shineColor),
+      transparent
+    );
+}
+.check{
+  height: 2em;
+}
+.button {
+  background-color: var(--btn-bg);
+  width: 193px;
+  height: 52px;
+  border-radius: 15px;
+  margin-top: 2em;
+}
+h1{
+  font-family: 'Inter', sans-serif;
+font-family: 'Roboto Mono', monospace;
+font-family: 'Work Sans', sans-serif;
+}
+.homepage-cont{
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+
+.homepage-cont h1{
+  font-size:31.25px;
+}
+
+.homepage-cont p{
+  font-size:16px;
+}
+.quest-cont{
+  width: 100vw;
+ 
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding:75px 40px ;
+}
+.quest{
+  width: 72.5vw;
+  padding-bottom: 2em;
+  border-bottom: 1px solid var(--border-btm);
+  overflow: hidden;
+}
+.quest h1{
+  font-size: 22px;
+}
+.options{
+  display: flex;
+  gap: 12.75px;
+  width: 90vw;
+
+}
+.answers{
+  padding:  5px 15px;
+  border: var(--border-color) 1px solid;
+  width: fit-content;
+  font-size: 16px;
+    border-radius: 7.94239px;
+  font-weight: 
+  500;
+  text-align: center;
+  text-transform: capitalize;
+  background-color: white;
+}
+.marked{
+  background-color: var(--marked-bg);
+}
+.correct{
+  background-color: var(--correct-bg);
+}
+.incorrect{
+  background-color: var(--incorrect-bg);
+}
+.picked{
+  display: none;
+}
