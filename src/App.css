@@ -106,7 +106,6 @@ font-family: 'Work Sans', sans-serif;
 }
 .quest-cont{
   width: 100vw;
- 
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -117,6 +116,19 @@ font-family: 'Work Sans', sans-serif;
   padding-bottom: 2em;
   border-bottom: 1px solid var(--border-btm);
   overflow: hidden;
+  position: relative;
+  height: 15rem;
+
+}
+.answered{
+   font-size: 40px;
+  background-color: rgba(225,225,225,0.2);
+  color: blue;
+  height: 15em;
+  display: flex; 
+}
+.ans{
+/*   transform: translateY(-150px); */
 }
 .quest h1{
   font-size: 22px;

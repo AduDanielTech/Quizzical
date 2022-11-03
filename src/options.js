@@ -4,16 +4,7 @@ import { click } from '@testing-library/user-event/dist/click';
 import { prettyDOM } from '@testing-library/react';
  let id = nanoid()
 
-function Options({e,options,setPicked,color,setColor,correct,score,setscore}) {
-   /*  const [color , setColor] = React.useState([])
-  let styles={}
-  function colorChange(target) {
-   styles = target.target.textContent === e.correct_answer? setColor(' correct') : setColor(' incorrect');
-   
- return target.target.className = "answers" +" " + color
-  }
- 
- */
+function Options({e,options,gradeChange,setPicked,color,setColor,correct,score,setscore}) {
      let returned= options.map(element => {
        
    let replace  = () => {
@@ -26,26 +17,26 @@ function Options({e,options,setPicked,color,setColor,correct,score,setscore}) {
   function addPicked(t) {
     var marked = color ? '' : 'marked'
          t.target.className = "answers" +" " + marked
-        console.log( setPicked(pre => {
-         return (
-            t.target.textContent
-         )
-        }));
+      
+       
          let scoreCount = score + 1
        /*  let groupAnswers = t.target.parentElement.children
         for (var i = 0; i < groupAnswers.length; i++) {
           console.log(groupAnswers[i])
       } */
-      console.log(t.target);
    /*   const scoreCoun =   () => { 
       return t.target.textContent === correct ? setscore(scoreCount) : score}
    scoreCoun() */
          setColor(pre => !pre ? true : false)
+       
+        window.addEventListener('DOMContentLoaded',()=>{
         
-       return console.log(  )
+          
+        })
+       return console.log( )
         }
         return (
-          <button  className={`answers `} onClick={addPicked} >
+          <button  className={`answers `} onClick={gradeChange} >
         {replace()} 
       </button>
         )

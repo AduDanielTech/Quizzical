@@ -19,8 +19,8 @@ let App = () => {
 
    return(
   <div className="app" id="app">
-{page}
-   
+{/* {page} */}
+   <QuestionsPage/>
   </div>
    )
 };
