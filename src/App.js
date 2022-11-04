@@ -20,7 +20,7 @@ let App = () => {
    return(
   <div className="app" id="app">
 {/* {page} */}
-   <QuestionsPage/>
+   <QuestionsPage score={score} setscore={setscore}/>
   </div>
    )
 };

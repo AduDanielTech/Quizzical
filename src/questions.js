@@ -1,7 +1,7 @@
 import React from 'react';
 import Options from './options';
 import { nanoid } from 'nanoid'
-
+import shuffleAnswers from './shuffleAnswers';
 const Questions = ({e,score,setscore}) => {
    
 
@@ -11,18 +11,6 @@ const Questions = ({e,score,setscore}) => {
     const [reactions , setreactions] = React.useState([])
 
   let styles={}
-  function gradeChange(target) {
-    const Option  = document.querySelectorAll('.options')
-    let className = target.target.parentElement.parentElement.lastChild.classList
-    let reactionsDiv =  target.target.parentElement.parentElement.lastChild.textcontent
-    const ugh =  grade === 'incorrect'  ||grade === ' correct'? className.add('ans'): console.log('not there');
-  
- 
-   styles = target.target.textContent === e.correct_answer?setgrade('correct') :  setgrade('incorrect');
- return target.target.className = 'answers' + ' ' + grade
-  }
- 
-
        let option = []
         e.incorrect_answers.forEach(element => {
         return  option.push(element)
@@ -35,7 +23,7 @@ const Questions = ({e,score,setscore}) => {
     let hi =  ho.replaceAll('acute;', '')
     return  hi.replaceAll('&', '')
     }
-  
+  let options = shuffleAnswers(option)
    
      
      return(
@@ -45,12 +33,11 @@ const Questions = ({e,score,setscore}) => {
          <div >
          <Options
           key={nanoid} 
-          options={option}
+          options={options }
           e={e} 
          setPicked={setPicked}
          setColor={setColor}
          color={color}
-         gradeChange={gradeChange}
          correct={e.correct_answer}
          score={score}
           setscore={setscore}

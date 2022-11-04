@@ -11,7 +11,7 @@ const  QuestionsPage = ({score,setscore}) => {
         .then(res => res.json())
         .then(data=> setData(data.results)) 
     },[])
-   
+
     function getAnswers() {
       let pickedAns = []
       let answersDiv = document.querySelectorAll('.marked')
@@ -37,13 +37,13 @@ const  QuestionsPage = ({score,setscore}) => {
           <br/>
         Score =   {score}
             {data.map((data) => {
-            
-            return (<Questions
+         
+           return (<Questions
                 e={data}
                 key={nanoid()}
                 score={score} 
                 setscore={setscore}
-                />)
+                />) 
         }) }
          <button className='check button' onClick={getAnswers}>Submit</button>
         </div>
